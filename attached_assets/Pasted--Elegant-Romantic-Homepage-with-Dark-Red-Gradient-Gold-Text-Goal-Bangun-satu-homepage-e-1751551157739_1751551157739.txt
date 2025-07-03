@@ -1,0 +1,67 @@
+# Elegant & Romantic Homepage with Dark Red Gradient & Gold Text
+
+## Goal:
+Bangun satu homepage elegan menggunakan HTML, CSS, dan JS. Desain harus berbicara romantis dan mewah dengan background gelap, teks emas untuk heading, dan font elegan.
+
+## Styles & Theme
+- **Background**: gradasi linear dark red, misalnya dari #3B0000 ke #700000.
+- **Font Heading/Subheading**: pakai Playfair Display, serif; teks berwarna emas (#D4AF37), dengan efek gradient clip (emas ke #F8E4AB).
+- **Font Body**: pakai Poppins, sans-serif; warna teks terang seperti #ECE0D6.
+- **CTA Buttons**:
+  - **Solid**: background emas, teks gelap, rounded, drop shadow, hover animasi naik kecil.
+  - **Ghost**: border emas, teks emas, hover berubah background emas & teks gelap.
+- **Smooth Transitions**: animasi transisi 0.3s pada elemen interaktif.
+
+## Layout & Sections
+1. **Hero Section**
+   - Full-screen background gradient, overlay gelap 50%.
+   - H1 & H2 dengan teks emas gradient-clip.
+   - Dua tombol CTA: “Explore Our Story” (ghost) dan “Our Gallery” (solid).
+
+2. **Navigation Bar**
+   - Sticky nav overlay atas halaman dengan logo/monogram kiri, menu kanan (Home, Gallery, Story, Notes, Extras).
+   - Responsive hamburger menu versi mobile.
+
+3. **Preview Grid**
+   - Grid responsif (2 kolom desktop, 1 kolom mobile) berisi 3 card: Gallery, Our Story, Love Notes.
+   - Card: gambar bulat/lunak, judul (Playfair Display, emas), cuplikan teks, tombol Read More (solid ghost style).
+
+4. **Sticky Audio Bar**
+   - Panel bawah fixed: tombol play/pause, judul lagu, progress bar tipis. Desain minimal & modern.
+
+5. **Love Notes Carousel**
+   - Carousel horizontal dengan 3 notes: nama, tanggal, cuplikan teks, icon hati merah (#EF6C75). Navigasi panah kecil.
+
+6. **Animations**
+   - Fade-in on scroll untuk grid & carousel.
+   - Hover animation pada tombol & cards.
+
+7. **Footer**
+   - Teks kecil “Made with ❤️ by [Name] – 2025” (Poppins, terang).
+   - Ikon sosial media, link ke custom 404 (“Oops, you’re lost in love?”).
+
+## Technical Requirements
+- CSS variables untuk warna & font.
+- Import Google Fonts: Playfair Display & Poppins.
+- Lazy-load gambar.
+- Responsive mobile-first design, media queries.
+- Accessibility: alt-text gambar, ARIA labels untuk nav & carousel, keyboard navigation support.
+- Smooth-scroll behavior pada anchor link.
+
+## Bonus
+- Floating heart animations di hero overlay (CSS/JS).
+- Confetti burst saat tombol CTA diklik (canvas-confetti).
+- Easter egg: klik ikon-gemerlap beberapa kali munculkan modal GIF romantis.
+
+---
+
+### 📄 Example Snippet to Seed Copilot:
+
+```html
+<!-- Hero Section -->
+<section class="hero">
+  <h1>For You, My Love</h1>
+  <h2>Every moment with you is magic</h2>
+  <button class="cta-ghost">Explore Our Story</button>
+  <button class="cta-solid">Our Gallery</button>
+</section>
