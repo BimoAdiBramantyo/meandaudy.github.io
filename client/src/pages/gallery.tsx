@@ -4,6 +4,23 @@ import { ArrowLeft, Search, Filter, Grid, List } from "lucide-react";
 import Navigation from "@/components/navigation";
 import ImageLightbox from "@/components/image-lightbox";
 
+// Import the real photos from assets
+import img1 from "@/assets/images/IMG-20241230-WA0105.jpg";
+import img2 from "@/assets/images/IMG-20241230-WA0107.jpg";
+import img3 from "@/assets/images/IMG-20250316-WA0045.jpg";
+import img4 from "@/assets/images/IMG-20250316-WA0051.jpg";
+import img5 from "@/assets/images/IMG-20250316-WA0060.jpg";
+import img6 from "@/assets/images/IMG-20250316-WA0068.jpg";
+import img7 from "@/assets/images/IMG-20250420-WA0018.jpg";
+import img8 from "@/assets/images/IMG-20250511-WA0040.jpg";
+import img9 from "@/assets/images/IMG-20250511-WA0054.jpg";
+import img10 from "@/assets/images/IMG-20250520-WA0030.jpg";
+import img11 from "@/assets/images/IMG_20250411_190318.jpg";
+import img12 from "@/assets/images/IMG_20250411_232523.jpg";
+import img13 from "@/assets/images/IMG_20250413_163040.jpg";
+import img14 from "@/assets/images/IMG_20250419_181202.jpg";
+import img15 from "@/assets/images/IMG_20250511_173914.jpg";
+
 export default function Gallery() {
   const [searchTerm, setSearchTerm] = useState("");
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -14,75 +31,123 @@ export default function Gallery() {
   const galleryImages = [
     {
       id: 1,
-      url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Romantic couple dancing at sunset",
-      title: "Our First Dance",
-      description: "The moment we knew we were meant to be together",
+      url: img1,
+      alt: "Beautiful moment together",
+      title: "Sweet Memories",
+      description: "One of our favorite moments captured",
       category: "special-moments"
     },
     {
       id: 2,
-      url: "https://images.unsplash.com/photo-1516589091380-5d8e87df6999?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Couple walking hand in hand through a romantic garden",
-      title: "Garden Walks",
-      description: "Our favorite way to spend Sunday mornings",
+      url: img2,
+      alt: "Happy times together",
+      title: "Joyful Days",
+      description: "Sharing laughter and love",
       category: "daily-life"
     },
     {
       id: 3,
-      url: "https://images.unsplash.com/photo-1544273677-6e4b999de2a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Romantic picnic setup with wine and flowers",
-      title: "Picnic Perfect",
-      description: "Celebrating our six-month anniversary",
-      category: "celebrations"
+      url: img3,
+      alt: "Romantic moment",
+      title: "Perfect Together",
+      description: "A moment of pure happiness",
+      category: "special-moments"
     },
     {
       id: 4,
-      url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Cozy coffee shop moment",
-      title: "Coffee Shop Memories",
-      description: "Where it all began",
-      category: "special-moments"
+      url: img4,
+      alt: "Beautiful smile",
+      title: "Your Beautiful Smile",
+      description: "The smile that melts my heart",
+      category: "daily-life"
     },
     {
       id: 5,
-      url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Romantic dinner with candles",
-      title: "Candlelit Dinner",
-      description: "Our first official date",
-      category: "dates"
-    },
-    {
-      id: 6,
-      url: "https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Couple silhouette against city skyline",
-      title: "City Lights",
-      description: "Making it official under the stars",
-      category: "special-moments"
-    },
-    {
-      id: 7,
-      url: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Beach sunset couple",
-      title: "Beach Getaway",
-      description: "Our first vacation together",
+      url: img5,
+      alt: "Adventure time",
+      title: "Our Adventure",
+      description: "Exploring the world together",
       category: "adventures"
     },
     {
+      id: 6,
+      url: img6,
+      alt: "Cozy moment",
+      title: "Cozy Times",
+      description: "Quiet moments that mean everything",
+      category: "daily-life"
+    },
+    {
+      id: 7,
+      url: img7,
+      alt: "Celebration time",
+      title: "Celebrating Love",
+      description: "Special occasions made even more special",
+      category: "celebrations"
+    },
+    {
       id: 8,
-      url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Couple hiking together",
-      title: "Adventure Awaits",
-      description: "Conquering mountains together",
+      url: img8,
+      alt: "Fun together",
+      title: "Fun Times",
+      description: "Every day is an adventure with you",
       category: "adventures"
     },
     {
       id: 9,
-      url: "https://images.unsplash.com/photo-1529903106645-98ba8702301b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Couple cooking together",
-      title: "Kitchen Love",
-      description: "Creating memories one recipe at a time",
+      url: img9,
+      alt: "Romantic date",
+      title: "Date Night",
+      description: "Our favorite way to spend time together",
+      category: "dates"
+    },
+    {
+      id: 10,
+      url: img10,
+      alt: "Beautiful day",
+      title: "Beautiful Day",
+      description: "Making every day count",
       category: "daily-life"
+    },
+    {
+      id: 11,
+      url: img11,
+      alt: "Evening together",
+      title: "Evening Bliss",
+      description: "Perfect evenings with you",
+      category: "special-moments"
+    },
+    {
+      id: 12,
+      url: img12,
+      alt: "Late night moments",
+      title: "Late Night Love",
+      description: "Those precious late-night conversations",
+      category: "special-moments"
+    },
+    {
+      id: 13,
+      url: img13,
+      alt: "Afternoon delight",
+      title: "Afternoon Together",
+      description: "Lazy afternoons are the best with you",
+      category: "daily-life"
+    },
+    {
+      id: 14,
+      url: img14,
+      alt: "Spring moments",
+      title: "Spring Love",
+      description: "Love blooming like spring flowers",
+      category: "adventures"
+    },
+    {
+      id: 15,
+      url: img15,
+      alt: "Perfect evening",
+      title: "Perfect Evening",
+      description: "Every evening is perfect with you",
+      category: "dates"
     }
   ];
 

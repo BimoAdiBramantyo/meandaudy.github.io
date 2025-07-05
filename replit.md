@@ -121,11 +121,12 @@ Changelog:
 
 ### New Features Added
 - **Advanced Gallery Page**: Added search functionality, category filtering, grid/list view modes, and image lightbox with navigation
-- **Dedicated Story Page**: Comprehensive love story timeline with alternating layouts and detailed chapters
+- **Story Page Updated**: Changed to show "Coming Soon" message as requested
 - **Enhanced Notes Page**: Categorized love notes with mood indicators, icons, and enhanced styling
 - **Advanced Contact Form**: Added message types, mood selection, subject field, and enhanced validation
 - **Image Lightbox Component**: Full-screen image viewer with download functionality and thumbnail navigation
 - **Navigation Improvements**: Updated to use proper routing between pages instead of scroll anchors
+- **Real Photos Integration**: Replaced all placeholder images with real photos from /assets/images folder
 
 ### Architecture Changes
 - **Page-Based Navigation**: Converted from single-page scroll sections to multi-page architecture

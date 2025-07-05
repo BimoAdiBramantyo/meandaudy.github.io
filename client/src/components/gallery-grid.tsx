@@ -1,24 +1,27 @@
 import { Link } from "wouter";
+import galleryImg from "@/assets/images/IMG-20250316-WA0045.jpg";
+import storyImg from "@/assets/images/IMG_20250411_190318.jpg";
+import notesImg from "@/assets/images/IMG-20250511-WA0054.jpg";
 
 export default function GalleryGrid() {
   const galleryItems = [
     {
-      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      alt: "Romantic couple dancing at sunset",
+      image: galleryImg,
+      alt: "Beautiful memories together",
       title: "Gallery",
       description: "Captured moments of our love story, from our first date to our most recent adventures together.",
       path: "/gallery"
     },
     {
-      image: "https://images.unsplash.com/photo-1516589091380-5d8e87df6999?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      alt: "Couple walking hand in hand through a romantic garden",
+      image: storyImg,
+      alt: "Our love story moments",
       title: "Our Story",
       description: "The tale of how we met, fell in love, and created this beautiful journey together.",
       path: "/story"
     },
     {
-      image: "https://images.unsplash.com/photo-1544273677-6e4b999de2a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-      alt: "Handwritten love letters with rose petals",
+      image: notesImg,
+      alt: "Sweet memories and love notes",
       title: "Love Notes",
       description: "Sweet messages and memories we've shared throughout our relationship.",
       path: "/notes"

@@ -1,27 +1,31 @@
+import storyImg1 from "@/assets/images/IMG-20241230-WA0105.jpg";
+import storyImg2 from "@/assets/images/IMG_20250411_232523.jpg";
+import storyImg3 from "@/assets/images/IMG-20250520-WA0030.jpg";
+
 export default function LoveStory() {
   const storyMilestones = [
     {
       title: "First Meeting",
       date: "March 15, 2020",
       description: "It was a rainy Tuesday when our eyes first met across the crowded coffee shop. Little did we know that this moment would change our lives forever. The way you smiled when you ordered your usual latte still makes my heart skip a beat.",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Couple meeting in a cozy coffee shop",
+      image: storyImg1,
+      alt: "Beautiful moment when we first met",
       reverse: false
     },
     {
       title: "First Date",
       date: "April 2, 2020",
       description: "Our first official date at that little Italian restaurant downtown. We talked for hours, laughing until our cheeks hurt. I knew then that you were someone special, someone I wanted to create memories with for the rest of my life.",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Romantic dinner date with candlelight",
+      image: storyImg2,
+      alt: "Our special first date together",
       reverse: true
     },
     {
       title: "Becoming Official",
       date: "May 20, 2020",
       description: "Under the stars in Central Park, you asked me to be yours, and I couldn't have said yes fast enough. That night, surrounded by the city lights and your loving embrace, I knew I had found my forever person.",
-      image: "https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-      alt: "Couple sharing a romantic moment in a beautiful park",
+      image: storyImg3,
+      alt: "The moment we became official",
       reverse: false
     }
   ];
