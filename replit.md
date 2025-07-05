@@ -117,8 +117,24 @@ Changelog:
 - July 03, 2025. Initial setup
 ```
 
+## Recent Updates (January 2025)
+
+### New Features Added
+- **Advanced Gallery Page**: Added search functionality, category filtering, grid/list view modes, and image lightbox with navigation
+- **Dedicated Story Page**: Comprehensive love story timeline with alternating layouts and detailed chapters
+- **Enhanced Notes Page**: Categorized love notes with mood indicators, icons, and enhanced styling
+- **Advanced Contact Form**: Added message types, mood selection, subject field, and enhanced validation
+- **Image Lightbox Component**: Full-screen image viewer with download functionality and thumbnail navigation
+- **Navigation Improvements**: Updated to use proper routing between pages instead of scroll anchors
+
+### Architecture Changes
+- **Page-Based Navigation**: Converted from single-page scroll sections to multi-page architecture
+- **Component Enhancement**: Added sophisticated UI components with filtering and search capabilities
+- **Form Enhancements**: Upgraded contact form with multiple field types and better user experience
+
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+User requested: More features, separate pages for Gallery/Story/Notes, 3-card layout, "Send Notes to Both of Us" for contact form
 ```

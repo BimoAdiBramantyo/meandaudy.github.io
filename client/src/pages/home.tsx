@@ -35,8 +35,6 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <GalleryGrid />
-      <LoveStory />
-      <LoveNotesCarousel />
       <ContactForm />
       
       {/* Footer */}

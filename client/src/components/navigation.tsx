@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Heart, Menu, X, Sparkles } from "lucide-react";
-import { useScrollSpy } from "@/hooks/use-scroll-spy";
+import { Link, useLocation } from "wouter";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const activeSection = useScrollSpy(['hero', 'gallery', 'story', 'notes', 'contact']);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,20 +25,11 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'story', label: 'Story' },
-    { id: 'notes', label: 'Notes' },
-    { id: 'contact', label: 'Contact' }
+    { path: '/', label: 'Home' },
+    { path: '/gallery', label: 'Gallery' },
+    { path: '/story', label: 'Story' },
+    { path: '/notes', label: 'Notes' }
   ];
 
   return (
@@ -50,22 +41,24 @@ export default function Navigation() {
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Heart className="text-romantic-red text-2xl" />
-              <span className="font-playfair text-2xl font-bold gold-gradient-text">L & A</span>
-            </div>
+            <Link href="/">
+              <div className="flex items-center space-x-2 cursor-pointer">
+                <Heart className="text-romantic-red text-2xl" />
+                <span className="font-playfair text-2xl font-bold gold-gradient-text">L & A</span>
+              </div>
+            </Link>
             
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`hover:text-rose-gold transition-colors ${
-                    activeSection === item.id ? 'text-rose-gold' : 'text-cream-soft'
-                  }`}
-                >
-                  {item.label}
-                </button>
+                <Link key={item.path} href={item.path}>
+                  <button
+                    className={`hover:text-rose-gold transition-colors ${
+                      location === item.path ? 'text-rose-gold' : 'text-cream-soft'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </Link>
               ))}
             </div>
 
@@ -91,13 +84,14 @@ export default function Navigation() {
         <div className="fixed inset-0 z-40 bg-black bg-opacity-95 backdrop-blur-md flex flex-col items-center justify-center">
           <div className="flex flex-col items-center space-y-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-2xl font-playfair hover:text-rose-gold transition-colors text-cream-soft"
-              >
-                {item.label}
-              </button>
+              <Link key={item.path} href={item.path}>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-2xl font-playfair hover:text-rose-gold transition-colors text-cream-soft"
+                >
+                  {item.label}
+                </button>
+              </Link>
             ))}
           </div>
         </div>
