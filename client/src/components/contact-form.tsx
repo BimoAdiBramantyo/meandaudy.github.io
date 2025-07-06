@@ -145,8 +145,8 @@ export default function ContactForm() {
                               onClick={() => field.onChange(type.value)}
                               className={`p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center gap-2 ${
                                 field.value === type.value
-                                  ? 'border-rose-gold bg-rose-gold bg-opacity-20 text-rose-gold'
-                                  : 'border-rose-gold border-opacity-30 text-cream-soft hover:border-opacity-60'
+                                  ? 'border-rose-gold bg-rose-gold text-black'
+                                  : 'border-rose-gold border-opacity-30 text-cream-soft hover:border-opacity-60 bg-black bg-opacity-40'
                               }`}
                             >
                               <IconComponent className="w-6 h-6" />
@@ -194,8 +194,8 @@ export default function ContactForm() {
                             onClick={() => field.onChange(mood.value)}
                             className={`px-4 py-2 rounded-full border-2 transition-all duration-300 ${
                               field.value === mood.value
-                                ? 'border-rose-gold bg-rose-gold bg-opacity-20 text-rose-gold'
-                                : 'border-rose-gold border-opacity-30 text-cream-soft hover:border-opacity-60'
+                                ? 'border-rose-gold bg-rose-gold text-black'
+                                : 'border-rose-gold border-opacity-30 text-cream-soft hover:border-opacity-60 bg-black bg-opacity-40'
                             }`}
                           >
                             {mood.label}

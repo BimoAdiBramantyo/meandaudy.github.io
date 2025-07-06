@@ -44,7 +44,7 @@ export default function Navigation() {
             <Link href="/">
               <div className="flex items-center space-x-2 cursor-pointer">
                 <Heart className="text-romantic-red text-2xl" />
-                <span className="font-playfair text-2xl font-bold gold-gradient-text">L & A</span>
+                <span className="font-playfair text-2xl font-bold gold-gradient-text">A & B</span>
               </div>
             </Link>
             

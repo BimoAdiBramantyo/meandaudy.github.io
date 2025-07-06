@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { ArrowLeft, Search, Filter, Grid, List } from "lucide-react";
+import { ArrowLeft, Search, Filter, Grid, List, Heart } from "lucide-react";
 import Navigation from "@/components/navigation";
 import ImageLightbox from "@/components/image-lightbox";
 
@@ -35,7 +35,12 @@ export default function Gallery() {
       alt: "Beautiful moment together",
       title: "Sweet Memories",
       description: "One of our favorite moments captured",
-      category: "special-moments"
+      category: "special-moments",
+      tags: [
+        "hugging pose by mirror",
+        "Cozy Vibes",
+        "Just Us"
+      ]
     },
     {
       id: 2,
@@ -43,7 +48,12 @@ export default function Gallery() {
       alt: "Happy times together",
       title: "Joyful Days",
       description: "Sharing laughter and love",
-      category: "daily-life"
+      category: "daily-life",
+      tags: [
+        "holding phones together",
+        "Candid Love",
+        "Mirror Shot"
+      ]
     },
     {
       id: 3,
@@ -51,7 +61,12 @@ export default function Gallery() {
       alt: "Romantic moment",
       title: "Perfect Together",
       description: "A moment of pure happiness",
-      category: "special-moments"
+      category: "special-moments",
+      tags: [
+        "hugging in front of “The Love Dept.”",
+        "Matching Outfits",
+        "Love Goals"
+      ]
     },
     {
       id: 4,
@@ -59,7 +74,12 @@ export default function Gallery() {
       alt: "Beautiful smile",
       title: "Your Beautiful Smile",
       description: "The smile that melts my heart",
-      category: "daily-life"
+      category: "daily-life",
+      tags: [
+        "OOTD",
+        "Silly Times",
+        "Mall Date"
+      ]
     },
     {
       id: 5,
@@ -67,7 +87,12 @@ export default function Gallery() {
       alt: "Adventure time",
       title: "Our Adventure",
       description: "Exploring the world together",
-      category: "adventures"
+      category: "adventures",
+      tags: [
+        "white outfit, shop background",
+        "OOTD",
+        "City Vibes"
+      ]
     },
     {
       id: 6,
@@ -75,7 +100,12 @@ export default function Gallery() {
       alt: "Cozy moment",
       title: "Cozy Times",
       description: "Quiet moments that mean everything",
-      category: "daily-life"
+      category: "daily-life",
+      tags: [
+        "black & white photobooth stickers",
+        "Photo Booth",
+        "Playful Memories"
+      ]
     },
     {
       id: 7,
@@ -83,7 +113,12 @@ export default function Gallery() {
       alt: "Celebration time",
       title: "Celebrating Love",
       description: "Special occasions made even more special",
-      category: "celebrations"
+      category: "celebrations",
+      tags: [
+        "bouquet + graduation-style",
+        "Graduation Day",
+        "Achievements"
+      ]
     },
     {
       id: 8,
@@ -91,7 +126,12 @@ export default function Gallery() {
       alt: "Fun together",
       title: "Fun Times",
       description: "Every day is an adventure with you",
-      category: "adventures"
+      category: "adventures",
+      tags: [
+        "selfie in car",
+        "Glam Time",
+        "On The Way"
+      ]
     },
     {
       id: 9,
@@ -99,7 +139,12 @@ export default function Gallery() {
       alt: "Romantic date",
       title: "Date Night",
       description: "Our favorite way to spend time together",
-      category: "dates"
+      category: "dates",
+      tags: [
+        "with parents at night",
+        "Family Moments",
+        "Dinner Night"
+      ]
     },
     {
       id: 10,
@@ -107,7 +152,12 @@ export default function Gallery() {
       alt: "Beautiful day",
       title: "Beautiful Day",
       description: "Making every day count",
-      category: "daily-life"
+      category: "daily-life",
+      tags: [
+        "helmet with dog filter",
+        "Silly Fun",
+        "On The Go"
+      ]
     },
     {
       id: 11,
@@ -115,7 +165,12 @@ export default function Gallery() {
       alt: "Evening together",
       title: "Evening Bliss",
       description: "Perfect evenings with you",
-      category: "special-moments"
+      category: "special-moments",
+      tags: [
+        "working on calligraphy/art",
+        "Focused Time",
+        "Creative Vibes"
+      ]
     },
     {
       id: 12,
@@ -123,7 +178,12 @@ export default function Gallery() {
       alt: "Late night moments",
       title: "Late Night Love",
       description: "Those precious late-night conversations",
-      category: "special-moments"
+      category: "special-moments",
+      tags: [
+        "eating on the floor",
+        "Midnight Snack",
+        "Cozy Chaos"
+      ]
     },
     {
       id: 13,
@@ -131,7 +191,12 @@ export default function Gallery() {
       alt: "Afternoon delight",
       title: "Afternoon Together",
       description: "Lazy afternoons are the best with you",
-      category: "daily-life"
+      category: "daily-life",
+      tags: [
+        "iPad drawing with crown and tears",
+        "Goofy Moments",
+        "Digital Fun"
+      ]
     },
     {
       id: 14,
@@ -139,7 +204,12 @@ export default function Gallery() {
       alt: "Spring moments",
       title: "Spring Love",
       description: "Love blooming like spring flowers",
-      category: "adventures"
+      category: "adventures",
+      tags: [
+        "playing billiards",
+        "Game Night",
+        "Chill Vibes"
+      ]
     },
     {
       id: 15,
@@ -147,7 +217,12 @@ export default function Gallery() {
       alt: "Perfect evening",
       title: "Perfect Evening",
       description: "Every evening is perfect with you",
-      category: "dates"
+      category: "dates",
+      tags: [
+        "mirror selfie with mom in restaurant",
+        "Family Time",
+        "Mirror Moments"
+      ]
     }
   ];
 
@@ -266,28 +341,50 @@ export default function Gallery() {
                 }`}
                 onClick={() => openLightbox(galleryImages.findIndex(img => img.id === image.id))}
               >
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className={
-                    viewMode === 'grid' 
-                      ? "w-full h-64 object-cover" 
-                      : "w-48 h-32 object-cover rounded-2xl flex-shrink-0"
-                  }
-                  loading="lazy"
-                />
+                <div className="relative">
+                  {/* Favorite badge for first three images */}
+                  {image.id <= 3 && (
+                    <span className="absolute top-3 left-3 z-10 flex items-center gap-1 bg-[#F7CAC9] text-[#7A2D2D] px-3 py-1 rounded-full text-xs font-semibold shadow">
+                      <Heart className="w-4 h-4 text-[#7A2D2D] fill-[#F7CAC9]" />
+                      Favorite
+                    </span>
+                  )}
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className={
+                      viewMode === 'grid' 
+                        ? "w-full h-64 object-cover" 
+                        : "w-48 h-32 object-cover rounded-2xl flex-shrink-0"
+                    }
+                    loading="lazy"
+                  />
+                </div>
                 <div className={viewMode === 'grid' ? "p-6" : "flex-1"}>
                   <div className="flex items-center gap-2 mb-2">
-                    <h3 className="font-playfair text-xl gold-gradient-text">
-                      {image.title}
-                    </h3>
-                    <span className="text-xs bg-rose-gold bg-opacity-20 text-rose-gold px-2 py-1 rounded-full">
+                    {/* Removed image title */}
+                    <span className="text-xs bg-[#F7CAC9] text-[#7A2D2D] px-2 py-1 rounded-full font-semibold cursor-pointer"
+                      onClick={e => {
+                        e.stopPropagation();
+                        setSelectedCategory(image.category);
+                      }}
+                    >
                       {categories.find(cat => cat.value === image.category)?.label || image.category}
                     </span>
                   </div>
-                  <p className="text-cream-soft text-sm">
-                    {image.description}
-                  </p>
+                  {/* Render tags if present */}
+                  {Array.isArray(image.tags) && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {image.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs bg-[#fff7e6] text-[#7A2D2D] px-2 py-1 rounded-full font-medium border border-[#F7CAC9] border-opacity-60"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
